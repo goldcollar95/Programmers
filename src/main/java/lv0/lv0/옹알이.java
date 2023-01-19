@@ -30,4 +30,10 @@ public class 옹알이 {
         return answer;
     }
 
+
+    //subSequence에 대한 개념과 replace에 대한 이해
+    /*  public CharSequence subSequence(int beginIndex, int endIndex) {
+        return this.substring(beginIndex, endIndex);
+    }*/
+
 }
