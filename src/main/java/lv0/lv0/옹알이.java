@@ -1,34 +1,26 @@
 package lv0.lv0;
 
-public class 옹알이 {
-    public int solution(String[] babbling) {
-        String[] original = {"aya","ye","ma","woo"};   //제한사항 체크
-        String[] repeat = {"ayaaya", "yeye", "mama", "woowoo"}; //반복사항 체크
-        int answer = 0;
+public class 양꼬치 {
+        public int solution(int n, int k) {
+            int answer = 0;
+            int yangggo = 12000;
+            int drinking = 2000;
+            int servicedrink = 0;
 
-        for(String twokind : babbling){     // String 안에 타입이름 : 매개변수 동시 삽입
-            for(String rbab : repeat){
-                twokind = twokind.replace(rbab, "X");
-            }
+            for(int i = 0; i < n; i++){
+                for(int j = 0; j < k; j++){
+                    if(servicedrink % 10 == 0){
+                        servicedrink++;
+                    }
+                    answer = (n * yangggo) + ((k-(n/10)) * drinking);
+                    //음료수 값은 먹은 음료수에서 (먹은 꼬치 수 / 10)를 빼야하기 때문에
+                    //먹은 꼬치 수 n에 12000을 곱한 값에 (먹은 음료수 - (먹은 꼬치 수 / 10))에 2000원을 곱한값을 더해준다.
 
-            for(String orab : original){
-
-                twokind = twokind.replace(orab, "?");
-            }
-
-            int number = 0;
-            for(int i = 0; i < twokind.length(); i++){
-                if(!twokind.subSequence(i, i+1).equals("?")){
-                    number = 1;
-                    break;
                 }
             }
-            if(number == 0){
-                answer++;
-            }
+            return answer;
         }
-        return answer;
-    }
+
 
 
     //subSequence에 대한 개념과 replace에 대한 이해
